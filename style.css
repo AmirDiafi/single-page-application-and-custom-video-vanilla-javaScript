@@ -1,0 +1,319 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wait{
+    display: block;
+    margin: 20px auto;
+}
+
+.error {
+    margin: 100px auto;
+    text-align: center;
+}
+
+.container .post {
+    width: 50%;
+    border: 2px solid rgb(248, 96, 8);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+}
+
+.container .post .vid {
+    margin: 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.container .post .play-pause-icon {
+    position: absolute;
+    width:60px;
+    height:60px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    transition: all 3s linear
+}
+
+.container .post .play-pause-icon img {
+    transition: all 3s linear;
+    width: 100%;
+    height: 100%;
+}
+
+.container .post .mute-unmute-icon {
+    position: absolute;
+    top: 10px;
+    right:10px;
+    width:20px;
+    height:20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.651);
+    border-radius: 20px;
+    padding: 3px 5px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    transition: all 3s linear
+}
+
+.container .post .mute-unmute-icon img {
+    width: 100%;
+    height: 100%;
+    transition: all 3s linear
+}
+
+.container .post .vid .increase-dicrease{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    transition: all .2s linear;
+    display: none
+}
+
+.container .post .vid .increase-dicrease.next {
+    right: 10%;
+    transform: translateX(10%);
+}
+
+.container .post .vid .increase-dicrease.prev {
+    left: 10%;
+    transform: translateX(10%);
+    /* display: none; */
+}
+
+.container .post .vid .increase-dicrease img {
+    width: 45px;
+    height: 45px;
+}
+
+.container .post span img {
+    width:55px;
+    height: 55px;
+    transition: all 2s linear;
+}
+
+.container .vid:hover span.play-pause-icon,
+.container .vid:hover span.increase-dicrease {
+    display: block
+}
+
+.container .post .vid video {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+
+.container .post .vid .times {
+    position: absolute;
+    top: 10px;
+    left:10px;
+    width:auto;
+    height:20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.651);
+    color: #FFF;
+    border-radius: 20px;
+    padding: 3px 5px;
+    display: none;
+}
+
+
+.container .post .info {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    line-height: 40px;
+    position: relative;
+}
+
+.container .post .info img {
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.container .post span.username {
+    font-weight: bold;
+    font-size: 16px
+}
+
+.container .post span.videoname {
+    font-weight: 300;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.container .post .info div.eval {
+    position: absolute;
+    font-size: 23px;
+    right:10px;
+    border-left: 1px solid rgb(248, 96, 8);
+    padding-left: 10px
+}
+
+.container .post .info div.eval span.heart{
+    cursor: pointer;
+    color: rgb(248, 96, 8)
+}
+
+
+
+/* Navbar */
+.navbar, .search-bar {
+    width:100%;
+    position: fixed;
+    left:0;right:0;
+    background-color: rgb(248, 96, 8);
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    z-index: 3;
+    text-align: center;
+    line-height: 70px;
+    overflow: hidden;
+}
+
+.search-bar {
+    top: 0;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0
+}
+
+.search-bar input.search {
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    outline: none!important;
+    border: 1px solid rgb(248, 96, 8);
+    margin-right: 0;
+}
+
+.search-bar button.search-btn {
+    outline: none!important;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid rgb(248, 96, 8);
+    cursor: pointer;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #333;
+    letter-spacing: 1px;
+    transition: all .3s linear;
+    margin-left: -1px;
+    opacity: 1;
+}
+
+.search-bar button.search-btn:hover{
+    background: transparent;
+    border-color: #333;
+}
+
+.search-bar button.search-btn:disabled {
+    background: #333;
+    opacity: .7;
+    padding: 10px 2px;
+    cursor: not-allowed;
+}
+
+.navbar {
+    bottom: 0;
+    height:70px;
+    border-radius: 10px 10px 0 0;
+}
+
+.navbar .nav-btn {
+    width:40px;
+    height:40px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 30px;
+    cursor: pointer;
+    background: rgb(248, 96, 8);
+    border: 1px solid rgb(17, 7, 1);
+    transition: all .3s linear;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar .nav-btn img {
+    width:75%;
+    height:75%;
+    position: absolute;
+    left: 7px;
+}
+
+.navbar .nav-btn:hover {
+    border: 1px solid rgb(248, 96, 8);
+    background: rgba(0, 0, 0, 0.651);
+}
+
+.navbar .upload {
+    display: inline-block;
+}
+
+.navbar .upload input{
+    position: absolute;
+    left:0;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.navbar .upload img{
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    left: 7px;
+    top: 4px;
+    text-align: center;
+    font-size: 25px;
+    transition: all .3s linear;
+    border-radius: 10px;
+}
+
+.navbar .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333;
+    width: 90px;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.navbar .logo img {
+    width:100%;
+    height:100%;
+}
+
+.not-found {
+    text-align: center;
+    margin-top: 100px;
+}
