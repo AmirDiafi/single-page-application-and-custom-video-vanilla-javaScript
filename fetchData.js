@@ -176,7 +176,7 @@ window.addEventListener('load', () => {
             let hash = (hashNow)?(hashNow == 'videos')
             ?hashNow+".json":hashNow+".html"
             :"videos.json";
-            let URL = `http://127.0.0.1:5500/${hash}`
+            let URL = window.location.origin+'/'+hash
             let data = await fetch(URL)
             if (data.ok == true && data.status == 200) {
                 if (hash == "profile.html") {
